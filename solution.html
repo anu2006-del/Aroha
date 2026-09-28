@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aroha | Wellness Solution</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* ==============================
+           BASIC
+        ============================== */
+
+        body.solution-body {
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'DM Sans', sans-serif;
+            background: #FFFAF5;
+            color: #3F3A46;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+
+        .solution-page {
+            width: min(1100px, 92%);
+            margin: auto;
+            padding: 25px 0 60px;
+        }
+
+
+        /* ==============================
+           TOP BAR
+        ============================== */
+
+        .solution-topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0 30px;
+        }
+
+        .solution-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 27px;
+            letter-spacing: 4px;
+            color: #655477;
+        }
+
+        .solution-back {
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-size: 14px;
+            color: #655477;
+            background: #ffffff;
+            border: 1px solid #e6dce9;
+            box-shadow: 0 5px 20px rgba(101, 84, 119, 0.08);
+            transition: 0.3s;
+        }
+
+        .solution-back:hover {
+            transform: translateY(-2px);
+            background: #655477;
+            color: #ffffff;
+        }
+
+
+        /* ==============================
+           HEADING
+        ============================== */
+
+        .solution-content {
+            padding-top: 35px;
+        }
+
+        .solution-heading {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 45px;
+        }
+
+        .solution-label {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            color: #655477;
+        }
+
+        .solution-heading h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 7vw, 70px);
+            margin: 0 0 15px;
+            color: #655477;
+        }
+
+        .solution-heading p {
+            line-height: 1.7;
+            font-size: 16px;
+            color: #6f6875;
+        }
+
+
+        /* ==============================
+           CARDS
+        ============================== */
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .solution-card {
+            border-radius: 25px;
+            padding: 30px;
+            min-height: 300px;
+
+            background: #ffffff;
+            border: 1px solid #e7dfe9;
+
+            box-shadow: 0 12px 35px rgba(101, 84, 119, 0.08);
+
+            transition: 0.4s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-8px);
+            border-color: #cdbfd3;
+            box-shadow: 0 20px 45px rgba(101, 84, 119, 0.14);
+        }
+
+        .solution-icon {
+            width: 55px;
+            height: 55px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 17px;
+            font-size: 25px;
+            margin-bottom: 22px;
+
+            background: #eee6f1;
+            color: #655477;
+        }
+
+        .solution-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #655477;
+        }
+
+        .solution-card p {
+            line-height: 1.7;
+            font-size: 14px;
+            color: #625d67;
+        }
+
+        .solution-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .solution-card li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 14px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #625d67;
+
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+
+        .solution-card li:hover {
+            transform: translateX(5px);
+        }
+
+        .solution-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            color: #655477;
+        }
+
+        /* COMPLETED EFFECT */
+
+        .solution-card li.completed {
+            opacity: 0.5;
+            text-decoration: line-through;
+        }
+
+
+        /* ==============================
+           MOOD TRACKER
+        ============================== */
+
+        .mood-tracker {
+            margin-top: 30px;
+            padding: 30px;
+
+            border-radius: 25px;
+
+            background: #ffffff;
+            border: 1px solid #e7dfe9;
+
+            box-shadow: 0 12px 35px rgba(101, 84, 119, 0.08);
+
+            text-align: center;
+        }
+
+        .mood-tracker h2 {
+            font-family: 'Playfair Display', serif;
+            color: #655477;
+            margin: 0 0 25px;
+        }
+
+        .mood-options {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .mood-options button {
+            border: none;
+
+            background: #f1ebf3;
+
+            border-radius: 18px;
+
+            padding: 15px 20px;
+
+            cursor: pointer;
+
+            font-size: 28px;
+
+            transition: 0.3s ease;
+        }
+
+        .mood-options button span {
+            display: block;
+            font-size: 13px;
+            margin-top: 6px;
+            color: #655477;
+        }
+
+        .mood-options button:hover {
+            transform: translateY(-5px);
+            background: #e5dbe9;
+        }
+
+        #selectedMood {
+            margin-top: 25px;
+            color: #756d7b;
+            font-size: 15px;
+        }
+
+
+        /* ==============================
+           PROGRESS TRACKER
+        ============================== */
+
+        .progress-tracker {
+            margin-top: 30px;
+
+            padding: 30px;
+
+            border-radius: 25px;
+
+            background: #ffffff;
+
+            border: 1px solid #e7dfe9;
+
+            box-shadow: 0 12px 35px rgba(101, 84, 119, 0.08);
+        }
+
+        .progress-tracker h2 {
+            font-family: 'Playfair Display', serif;
+            color: #655477;
+            margin: 0 0 8px;
+        }
+
+        .progress-tracker > p {
+            color: #756d7b;
+            margin-bottom: 25px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+
+            background: #ebe5ee;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+
+            background: #655477;
+
+            border-radius: 20px;
+
+            transition: width 0.4s ease;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+
+            margin: 15px 0 20px;
+
+            color: #655477;
+        }
+
+        .progress-tasks {
+            display: grid;
+            gap: 12px;
+        }
+
+        .progress-tasks label {
+            padding: 14px 16px;
+
+            border-radius: 15px;
+
+            background: #f5f0f6;
+
+            color: #5f5865;
+
+            cursor: pointer;
+
+            transition: 0.25s ease;
+        }
+
+        .progress-tasks label:hover {
+            transform: translateX(5px);
+            background: #eee6f1;
+        }
+
+        .progress-tasks input {
+            margin-right: 10px;
+            accent-color: #655477;
+        }
+
+
+        /* ==============================
+           REMINDER
+        ============================== */
+
+        .solution-reminder {
+            margin-top: 30px;
+
+            padding: 30px;
+
+            border-radius: 25px;
+
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            background: linear-gradient(
+                135deg,
+                #eee6f1,
+                #f7f2f7
+            );
+
+            border: 1px solid #e2d8e5;
+        }
+
+        .solution-reminder > span {
+            width: 50px;
+            height: 50px;
+
+            flex-shrink: 0;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+
+            font-size: 22px;
+
+            background: #ffffff;
+            color: #655477;
+        }
+
+        .solution-reminder h2 {
+            font-family: 'Playfair Display', serif;
+
+            margin: 0 0 6px;
+
+            color: #655477;
+        }
+
+        .solution-reminder p {
+            line-height: 1.6;
+            margin: 0;
+            color: #706875;
+        }
+
+
+        /* ==============================
+           RESPONSIVE
+        ============================== */
+
+        @media (max-width: 800px) {
+
+            .solution-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .solution-card {
+                min-height: auto;
+            }
+
+            .solution-heading {
+                margin-bottom: 30px;
+            }
+
+            .solution-content {
+                padding-top: 25px;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .solution-page {
+                width: 90%;
+            }
+
+            .solution-topbar {
+                padding-bottom: 20px;
+            }
+
+            .solution-logo {
+                font-size: 23px;
+            }
+
+            .solution-heading h1 {
+                font-size: 42px;
+            }
+
+            .solution-heading p {
+                font-size: 14px;
+            }
+
+            .solution-card {
+                padding: 24px;
+            }
+
+            .solution-reminder {
+                padding: 24px;
+                align-items: flex-start;
+            }
+
+            .mood-options {
+                gap: 10px;
+            }
+
+            .mood-options button {
+                padding: 12px 16px;
+            }
+
+            .progress-tracker {
+                padding: 24px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="solution-body">
+
+    <main class="solution-page">
+
+
+        <!-- TOP BAR -->
+
+        <div class="solution-topbar">
+
+            <div class="solution-logo">
+                AROHA
+            </div>
+
+            <a href="#" class="solution-back" id="backButton">
+                ← Back
+            </a>
+
+        </div>
+
+
+        <!-- CONTENT -->
+
+        <section class="solution-content">
+
+
+            <!-- HEADING -->
+
+            <div class="solution-heading">
+
+                <span class="solution-label" id="solutionLabel">
+                    AROHA WELLNESS
+                </span>
+
+                <h1 id="solutionTitle">
+                    Self Care
+                </h1>
+
+                <p id="solutionDescription">
+                    Small acts of care can make a big difference
+                    in how you feel every day.
+                </p>
+
+            </div>
+
+
+            <!-- THREE MAIN CARDS -->
+
+            <div class="solution-grid">
+
+
+                <!-- WHY -->
+
+                <div class="solution-card">
+
+                    <div class="solution-icon" id="solutionIcon">
+                        🌿
+                    </div>
+
+                    <h2>
+                        Why it matters
+                    </h2>
+
+                    <p id="whyText"></p>
+
+                </div>
+
+
+                <!-- WHAT TO DO -->
+
+                <div class="solution-card">
+
+                    <div class="solution-icon">
+                        ✨
+                    </div>
+
+                    <h2>
+                        What you can do
+                    </h2>
+
+                    <ul id="doList"></ul>
+
+                </div>
+
+
+                <!-- TIPS -->
+
+                <div class="solution-card">
+
+                    <div class="solution-icon">
+                        💡
+                    </div>
+
+                    <h2>
+                        Simple tips
+                    </h2>
+
+                    <ul id="tipsList"></ul>
+
+                </div>
+
+            </div>
+
+
+            <!-- MOOD TRACKER -->
+
+            <div class="mood-tracker" id="moodTracker">
+
+                <h2>
+                    How are you feeling today?
+                </h2>
+
+                <div class="mood-options">
+
+                    <button data-mood="😊 Happy">
+                        😊
+                        <span>Happy</span>
+                    </button>
+
+                    <button data-mood="🙂 Good">
+                        🙂
+                        <span>Good</span>
+                    </button>
+
+                    <button data-mood="😐 Okay">
+                        😐
+                        <span>Okay</span>
+                    </button>
+
+                    <button data-mood="😔 Low">
+                        😔
+                        <span>Low</span>
+                    </button>
+
+                    <button data-mood="😣 Stressed">
+                        😣
+                        <span>Stressed</span>
+                    </button>
+
+                </div>
+
+                <p id="selectedMood">
+                    Select your mood for today.
+                </p>
+
+            </div>
+
+
+            <!-- PROGRESS TRACKER -->
+
+            <div class="progress-tracker" id="progressTracker">
+
+                <h2>
+                    My Daily Progress
+                </h2>
+
+                <p>
+                    Complete your wellness habits today.
+                </p>
+
+                <div class="progress-bar">
+
+                    <div
+                        class="progress-fill"
+                        id="progressFill">
+                    </div>
+
+                </div>
+
+                <div class="progress-text">
+
+                    <strong id="progressPercent">
+                        0%
+                    </strong>
+
+                    <span id="progressStatus">
+                        0 of 4 completed
+                    </span>
+
+                </div>
+
+                <div class="progress-tasks">
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            class="progress-check">
+                        Drink enough water
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            class="progress-check">
+                        Move your body
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            class="progress-check">
+                        Eat balanced meals
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            class="progress-check">
+                        Get enough rest
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- REMINDER -->
+
+            <div class="solution-reminder">
+
+                <span>
+                    🌱
+                </span>
+
+                <div>
+
+                    <h2 id="reminderTitle">
+                        Take care of yourself
+                    </h2>
+
+                    <p id="reminderText">
+                        Small consistent habits can make your
+                        everyday wellbeing better.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        /* ==========================================
+           READ URL
+        ========================================== */
+
+        const params =
+            new URLSearchParams(window.location.search);
+
+        const topic =
+            params.get("topic") || "selfcare";
+
+        const gender =
+            params.get("gender");
+
+
+        /* ==========================================
+           COMMON SOLUTION THEME
+        ========================================== */
+
+        /*
+           Women and Men both use the same
+           Warm Ivory + Muted Plum theme
+           on the Solution page.
+        */
+
+        document.body.classList.remove("women-solution");
+        document.body.classList.remove("men-solution");
+
+        document.body.style.background = "#FFFAF5";
+        document.body.style.color = "#3F3A46";
+
+
+        /* ==========================================
+           BACK BUTTON
+        ========================================== */
+
+        const backButton =
+            document.getElementById("backButton");
+
+        if (gender === "men") {
+
+            backButton.href = "men.html";
+
+        } else if (gender === "women") {
+
+            backButton.href = "women.html";
+
+        } else {
+
+            const referrer =
+                document.referrer.toLowerCase();
+
+            if (referrer.includes("men.html")) {
+
+                backButton.href = "men.html";
+
+            } else {
+
+                backButton.href = "women.html";
+
+            }
+
+        }
+
+
+        /* ==========================================
+           TOPIC CONTENT
+        ========================================== */
+
+        const content = {
+
+            selfcare: {
+
+                title: "Self Care",
+
+                description:
+                    "Simple habits that help you take better care of yourself every day.",
+
+                why:
+                    "Self-care gives your body and mind time to rest, recharge and feel better.",
+
+                do: [
+                    "Take a few minutes for yourself.",
+                    "Keep a simple morning or evening routine.",
+                    "Spend some time doing something you enjoy.",
+                    "Give yourself enough time to rest."
+                ],
+
+                tips: [
+                    "Start with one small habit.",
+                    "Avoid trying to change everything at once.",
+                    "Make self-care part of your regular routine.",
+                    "Listen to what your body needs."
+                ],
+
+                reminderTitle:
+                    "Small care matters",
+
+                reminderText:
+                    "Taking care of yourself is a daily habit, not a one-time task."
+
+            },
+
+
+            period: {
+
+                title: "Period Care",
+
+                description:
+                    "Simple ways to understand your cycle and support everyday comfort.",
+
+                why:
+                    "Understanding your menstrual cycle can help you notice your usual patterns and care for yourself during your period.",
+
+                do: [
+                    "Track when your period starts and ends.",
+                    "Keep period products available before your expected date.",
+                    "Stay hydrated and eat regular balanced meals.",
+                    "Give yourself time to rest when needed."
+                ],
+
+                tips: [
+                    "Notice your usual cycle pattern.",
+                    "Keep comfortable clothing and supplies nearby.",
+                    "Gentle movement may help you feel more comfortable.",
+                    "Talk to a healthcare professional if symptoms are severe or unusual."
+                ],
+
+                reminderTitle:
+                    "Listen to your body",
+
+                reminderText:
+                    "Every cycle can feel different. Notice your usual pattern and care for yourself."
+
+            },
+
+
+            mental: {
+
+                title: "Mental Wellness",
+
+                description:
+                    "Simple ways to support your mind, emotions and everyday wellbeing.",
+
+                why:
+                    "Looking after your mental wellbeing can help you handle everyday stress and emotions.",
+
+                do: [
+                    "Take short breaks during the day.",
+                    "Spend a few quiet minutes without your phone.",
+                    "Talk to someone you trust when needed.",
+                    "Make time for activities you enjoy."
+                ],
+
+                tips: [
+                    "Take things one step at a time.",
+                    "Keep a simple routine.",
+                    "Get enough rest.",
+                    "Ask for support when you need it."
+                ],
+
+                reminderTitle:
+                    "Give your mind some space",
+
+                reminderText:
+                    "Small moments of rest and connection can support everyday wellbeing."
+
+            },
+
+
+            fitness: {
+
+                title: "Fitness",
+
+                description:
+                    "Build movement and strength into your everyday routine.",
+
+                why:
+                    "Regular movement supports strength, mobility and overall wellbeing.",
+
+                do: [
+                    "Start with simple bodyweight exercises.",
+                    "Stretch gently before and after exercise.",
+                    "Move your body throughout the day.",
+                    "Choose activities you enjoy."
+                ],
+
+                tips: [
+                    "Start slowly and increase gradually.",
+                    "Focus on consistency rather than intensity.",
+                    "Give your body time to recover.",
+                    "Stop if you feel sharp or unusual pain."
+                ],
+
+                reminderTitle:
+                    "Keep moving",
+
+                reminderText:
+                    "A little movement every day can become a strong healthy habit."
+
+            },
+
+
+            nutrition: {
+
+                title: "Nutrition",
+
+                description:
+                    "Learn simple habits for balanced everyday nutrition.",
+
+                why:
+                    "Balanced meals provide your body with energy and important nutrients.",
+
+                do: [
+                    "Include vegetables and fruits regularly.",
+                    "Add protein-rich foods to meals.",
+                    "Choose whole or minimally processed foods often.",
+                    "Drink enough water throughout the day."
+                ],
+
+                tips: [
+                    "Keep your meals balanced.",
+                    "Avoid skipping meals regularly.",
+                    "Enjoy treats in moderation.",
+                    "Pay attention to hunger and fullness."
+                ],
+
+                reminderTitle:
+                    "Nourish your body",
+
+                reminderText:
+                    "Healthy eating is about balanced habits, not perfection."
+
+            },
+
+
+            water: {
+
+                title: "Water",
+
+                description:
+                    "Make hydration a simple part of your everyday routine.",
+
+                why:
+                    "Water helps your body maintain normal functions and supports everyday activity.",
+
+                do: [
+                    "Keep a water bottle nearby.",
+                    "Drink water regularly throughout the day.",
+                    "Have water with your meals.",
+                    "Drink more when you are active or in hot weather."
+                ],
+
+                tips: [
+                    "Do not wait until you are extremely thirsty.",
+                    "Make water easy to access.",
+                    "Increase fluids gradually when needed.",
+                    "Use your thirst and routine as guides."
+                ],
+
+                reminderTitle:
+                    "Stay hydrated",
+
+                reminderText:
+                    "Simple, regular hydration can become an easy everyday habit."
+
+            },
+
+
+            skin: {
+
+                title: "Skin Care",
+
+                description:
+                    "Simple habits for maintaining healthy-looking skin.",
+
+                why:
+                    "A simple skincare routine can help keep your skin clean and comfortable.",
+
+                do: [
+                    "Clean your face gently.",
+                    "Avoid harsh scrubbing.",
+                    "Keep pillowcases and towels clean.",
+                    "Give your skin time to recover from irritation."
+                ],
+
+                tips: [
+                    "Keep your routine simple.",
+                    "Avoid picking at breakouts.",
+                    "Introduce new products gradually.",
+                    "Pay attention to how your skin reacts."
+                ],
+
+                reminderTitle:
+                    "Keep it simple",
+
+                reminderText:
+                    "Consistent, gentle care is more useful than a complicated routine."
+
+            },
+
+
+            hair: {
+
+                title: "Hair Care",
+
+                description:
+                    "Gentle habits for maintaining healthy-looking hair.",
+
+                why:
+                    "Gentle hair care can help reduce unnecessary damage and keep hair comfortable.",
+
+                do: [
+                    "Handle wet hair gently.",
+                    "Keep your scalp clean.",
+                    "Avoid excessive heat when possible.",
+                    "Trim damaged ends when needed."
+                ],
+
+                tips: [
+                    "Avoid pulling or tight hairstyles.",
+                    "Be gentle while combing.",
+                    "Keep your routine consistent.",
+                    "Notice changes in your scalp or hair."
+                ],
+
+                reminderTitle:
+                    "Care for your hair",
+
+                reminderText:
+                    "Gentle and consistent habits can support healthier-looking hair."
+
+            },
+
+
+            routine: {
+
+                title: "Daily Routine",
+
+                description:
+                    "Create a simple routine that works with your everyday life.",
+
+                why:
+                    "A manageable routine can make healthy habits easier to maintain.",
+
+                do: [
+                    "Set a regular wake-up time.",
+                    "Plan simple meals.",
+                    "Include movement and rest.",
+                    "Keep a regular bedtime."
+                ],
+
+                tips: [
+                    "Do not make your routine too complicated.",
+                    "Start with two or three habits.",
+                    "Leave some flexible time.",
+                    "Adjust your routine when needed."
+                ],
+
+                reminderTitle:
+                    "Build your rhythm",
+
+                reminderText:
+                    "A simple routine that you can maintain is better than a perfect routine you cannot follow."
+
+            },
+
+
+            mood: {
+
+                title: "Mood Tracker",
+
+                description:
+                    "Notice your emotions and understand your daily mood.",
+
+                why:
+                    "Noticing how you feel can help you understand patterns in your everyday life.",
+
+                do: [
+                    "Check in with yourself once a day.",
+                    "Write down how you are feeling.",
+                    "Notice what affects your mood.",
+                    "Make time for activities that help you relax."
+                ],
+
+                tips: [
+                    "Be honest with yourself.",
+                    "Look for patterns over time.",
+                    "Do not judge your emotions.",
+                    "Talk to someone you trust when needed."
+                ],
+
+                reminderTitle:
+                    "Notice how you feel",
+
+                reminderText:
+                    "Understanding your emotions starts with simply paying attention to them."
+
+            },
+
+
+            sleep: {
+
+                title: "Sleep",
+
+                description:
+                    "Build simple habits that support quality rest.",
+
+                why:
+                    "Good sleep supports everyday energy, concentration and recovery.",
+
+                do: [
+                    "Keep a consistent sleep schedule.",
+                    "Create a calm bedtime routine.",
+                    "Reduce screen use before sleeping.",
+                    "Keep your sleeping space comfortable."
+                ],
+
+                tips: [
+                    "Try to sleep and wake around similar times.",
+                    "Avoid heavy meals close to bedtime.",
+                    "Keep your room comfortable and quiet.",
+                    "Give yourself enough time to rest."
+                ],
+
+                reminderTitle:
+                    "Rest is important",
+
+                reminderText:
+                    "Sleep is part of your wellness routine, not wasted time."
+
+            },
+
+
+            progress: {
+
+                title: "My Progress",
+
+                description:
+                    "Keep track of your wellness journey and everyday habits.",
+
+                why:
+                    "Tracking small habits can help you notice consistency and changes over time.",
+
+                do: [
+                    "Track your daily habits.",
+                    "Notice what you are doing consistently.",
+                    "Celebrate small improvements.",
+                    "Review your routine regularly."
+                ],
+
+                tips: [
+                    "Focus on progress rather than perfection.",
+                    "Keep your goals realistic.",
+                    "Give yourself credit for small wins.",
+                    "Adjust your goals when needed."
+                ],
+
+                reminderTitle:
+                    "Keep going",
+
+                reminderText:
+                    "Every small step you repeat can become part of your progress."
+
+            }
+
+        };
+
+
+        /* ==========================================
+           TOPIC ICONS
+        ========================================== */
+
+        const topicIcons = {
+
+            selfcare: "🌿",
+            period: "🌷",
+            mental: "🧠",
+            fitness: "🏃",
+            nutrition: "🥗",
+            water: "💧",
+            skin: "✨",
+            hair: "💇",
+            routine: "📅",
+            mood: "😊",
+            sleep: "🌙",
+            progress: "📈"
+
+        };
+
+
+        /* ==========================================
+           SHOW SELECTED CONTENT
+        ========================================== */
+
+        const selected =
+            content[topic] || content.selfcare;
+
+
+        document.getElementById("solutionTitle").textContent =
+            selected.title;
+
+
+        document.getElementById("solutionDescription").textContent =
+            selected.description;
+
+
+        document.getElementById("whyText").textContent =
+            selected.why;
+
+
+        document.getElementById("doList").innerHTML =
+            selected.do
+                .map(item => `<li>${item}</li>`)
+                .join("");
+
+
+        document.getElementById("tipsList").innerHTML =
+            selected.tips
+                .map(item => `<li>${item}</li>`)
+                .join("");
+
+
+        document.getElementById("reminderTitle").textContent =
+            selected.reminderTitle;
+
+
+        document.getElementById("reminderText").textContent =
+            selected.reminderText;
+
+
+        /* ==========================================
+           ICON
+        ========================================== */
+
+        document.getElementById("solutionIcon").textContent =
+            topicIcons[topic] || "🌿";
+
+
+        /* ==========================================
+           CLICK TO COMPLETE
+        ========================================== */
+
+        document
+            .querySelectorAll(".solution-card li")
+            .forEach(item => {
+
+                item.addEventListener("click", function () {
+
+                    this.classList.toggle("completed");
+
+                });
+
+            });
+
+
+        /* ==========================================
+           LABEL
+        ========================================== */
+
+        const label =
+            document.getElementById("solutionLabel");
+
+
+        if (gender === "men") {
+
+            label.textContent =
+                "AROHA • MEN'S WELLNESS";
+
+        } else if (gender === "women") {
+
+            label.textContent =
+                "AROHA • WOMEN'S WELLNESS";
+
+        } else {
+
+            label.textContent =
+                "AROHA WELLNESS";
+
+        }
+
+
+        /* ==========================================
+           MOOD TRACKER
+        ========================================== */
+
+        const moodButtons =
+            document.querySelectorAll(".mood-options button");
+
+
+        const selectedMood =
+            document.getElementById("selectedMood");
+
+
+        moodButtons.forEach(button => {
+
+            button.addEventListener("click", function () {
+
+                const mood =
+                    this.dataset.mood;
+
+
+                selectedMood.textContent =
+                    "Today's mood: " + mood;
+
+
+                moodButtons.forEach(btn => {
+
+                    btn.style.transform =
+                        "scale(1)";
+
+                });
+
+
+                this.style.transform =
+                    "scale(1.12)";
+
+            });
+
+        });
+
+
+        /* ==========================================
+           PROGRESS TRACKER
+        ========================================== */
+
+        const progressChecks =
+            document.querySelectorAll(".progress-check");
+
+
+        const progressFill =
+            document.getElementById("progressFill");
+
+
+        const progressPercent =
+            document.getElementById("progressPercent");
+
+
+        const progressStatus =
+            document.getElementById("progressStatus");
+
+
+        progressChecks.forEach(check => {
+
+            check.addEventListener("change", function () {
+
+                const completed =
+                    document.querySelectorAll(
+                        ".progress-check:checked"
+                    ).length;
+
+
+                const total =
+                    progressChecks.length;
+
+
+                const percentage =
+                    (completed / total) * 100;
+
+
+                progressFill.style.width =
+                    percentage + "%";
+
+
+                progressPercent.textContent =
+                    percentage + "%";
+
+
+                if (percentage === 100) {
+
+                    progressStatus.textContent =
+                        "🎉 Day Complete! You completed all your wellness habits today.";
+
+                } else {
+
+                    progressStatus.textContent =
+                        completed +
+                        " of " +
+                        total +
+                        " completed";
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>

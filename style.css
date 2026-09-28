@@ -1,0 +1,1073 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f5f1e8;
+    color: #26382b;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+
+/* =========================
+   WELCOME PAGE
+========================= */
+
+.welcome {
+    min-height: 100vh;
+    padding: 50px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background:
+        radial-gradient(circle at 10% 20%, #dce8d7 0%, transparent 30%),
+        radial-gradient(circle at 90% 80%, #eadfcd 0%, transparent 30%),
+        #f7f3ea;
+}
+
+.brand {
+    text-align: center;
+    animation: fadeDown 1s ease;
+}
+
+.brand-mark {
+    font-size: 28px;
+    color: #728b70;
+}
+
+.brand h1 {
+    margin-top: 5px;
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    letter-spacing: 8px;
+    color: #314b36;
+}
+
+.brand p {
+    margin-top: 8px;
+    color: #71806f;
+    font-size: 15px;
+}
+
+.selection {
+    text-align: center;
+    animation: fadeUp 1s ease;
+}
+
+.selection h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: #304936;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #7b8477;
+    margin-bottom: 35px;
+}
+
+.choice-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 850px;
+    margin: auto;
+}
+
+.choice-card {
+    width: 330px;
+    padding: 38px 30px;
+    border-radius: 28px;
+    background: rgba(255,255,255,0.75);
+    border: 1px solid rgba(100,120,100,0.12);
+    box-shadow: 0 20px 50px rgba(45,65,45,0.08);
+    transition: 0.4s ease;
+}
+
+.choice-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 28px 60px rgba(45,65,45,0.15);
+}
+
+.choice-card .icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 30px;
+}
+
+.choice-card.women .icon {
+    background: #ead5d8;
+    color: #a2606d;
+}
+
+.choice-card.men .icon {
+    background: #d4e1df;
+    color: #35625f;
+}
+
+.choice-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.choice-card p {
+    color: #7b8477;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.choice-card button {
+    border: none;
+    padding: 13px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.choice-card.women button {
+    background: #a2606d;
+}
+
+.choice-card.men button {
+    background: #35625f;
+}
+
+.choice-card button:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    color: #899287;
+    font-size: 13px;
+}
+
+footer span {
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   WOMEN DASHBOARD
+========================= */
+
+.women-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 5% 5%, #f1dfe2 0%, transparent 28%),
+        radial-gradient(circle at 95% 90%, #eadbe2 0%, transparent 28%),
+        #fbf5f2;
+    color: #49383e;
+}
+
+.dashboard {
+    width: min(1180px, 92%);
+    margin: auto;
+    padding: 25px 0 60px;
+}
+
+
+/* TOP BAR */
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0 30px;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    letter-spacing: 4px;
+    color: #8e5362;
+}
+
+.back-btn {
+    text-decoration: none;
+    color: #8e5362;
+    background: #fff;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 14px;
+    transition: 0.3s;
+    box-shadow: 0 5px 20px rgba(90,60,70,0.08);
+}
+
+.back-btn:hover {
+    transform: translateY(-2px);
+    background: #8e5362;
+    color: white;
+}
+
+
+/* WELCOME */
+
+.welcome-text {
+    padding: 35px 0;
+}
+
+.welcome-text small {
+    color: #a27782;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.welcome-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 6vw, 65px);
+    color: #543d44;
+    margin: 10px 0;
+}
+
+.welcome-text p {
+    color: #85757a;
+    max-width: 600px;
+    line-height: 1.7;
+}
+
+
+/* STATS */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin: 25px 0 55px;
+}
+
+.stat-card {
+    background: rgba(255,255,255,0.8);
+    border: 1px solid #eadcdf;
+    border-radius: 20px;
+    padding: 22px;
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card span {
+    font-size: 13px;
+    color: #9b8188;
+}
+
+.stat-card h3 {
+    margin-top: 8px;
+    font-size: 27px;
+    color: #754b58;
+}
+
+
+/* SECTION TITLE */
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #543d44;
+    margin-bottom: 22px;
+}
+
+
+/* WELLNESS CARDS */
+
+.wellness-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 55px;
+}
+
+.wellness-card {
+    text-decoration: none;
+    color: inherit;
+    background: rgba(255,255,255,0.82);
+    border: 1px solid #eadcdf;
+    border-radius: 23px;
+    padding: 25px 20px;
+    min-height: 180px;
+    transition: 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.wellness-card::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #f0dce1;
+    right: -30px;
+    bottom: -30px;
+    opacity: 0.5;
+}
+
+.wellness-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(100,65,75,0.12);
+    border-color: #d8b7c0;
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    background: #f0dce1;
+    color: #925a68;
+    font-size: 22px;
+    margin-bottom: 17px;
+}
+
+.wellness-card h3 {
+    color: #60434c;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.wellness-card p {
+    color: #918087;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* TODO SECTION */
+
+.todo-section {
+    background: rgba(255,255,255,0.8);
+    border: 1px solid #eadcdf;
+    border-radius: 28px;
+    padding: 30px;
+    margin-bottom: 35px;
+}
+
+.todo-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.todo-item {
+    background: #fbf4f5;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    color: #674c55;
+}
+
+.todo-item input {
+    width: 18px;
+    height: 18px;
+    accent-color: #a2606d;
+}
+
+
+/* MOTIVATION */
+
+.motivation {
+    background: linear-gradient(135deg, #ead5d9, #f3e5e6);
+    border-radius: 28px;
+    padding: 40px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.motivation h2 {
+    font-family: 'Playfair Display', serif;
+    color: #714c57;
+    margin-bottom: 10px;
+}
+
+.motivation p {
+    color: #846d74;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   MEN DASHBOARD
+========================= */
+
+.men-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 5% 5%, #d9e7e5 0%, transparent 28%),
+        radial-gradient(circle at 95% 90%, #dce5e8 0%, transparent 28%),
+        #f4f7f6;
+    color: #344846;
+}
+
+.men-page .dashboard {
+    width: min(1180px, 92%);
+    margin: auto;
+    padding: 25px 0 60px;
+}
+
+.men-page .logo {
+    color: #35625f;
+}
+
+.men-page .back-btn {
+    color: #35625f;
+}
+
+.men-page .back-btn:hover {
+    background: #35625f;
+    color: white;
+}
+
+.men-page .welcome-text small {
+    color: #547d79;
+}
+
+.men-page .welcome-text h1 {
+    color: #304a48;
+}
+
+.men-page .welcome-text p {
+    color: #72817f;
+}
+
+.men-page .stat-card,
+.men-page .wellness-card,
+.men-page .todo-section {
+    border-color: #dce7e5;
+}
+
+.men-page .stat-card h3 {
+    color: #35625f;
+}
+
+.men-page .section-title {
+    color: #304a48;
+}
+
+.men-page .wellness-card:hover {
+    border-color: #aac8c4;
+    box-shadow: 0 18px 40px rgba(50,90,85,0.12);
+}
+
+.men-page .card-icon {
+    background: #dceae8;
+    color: #35625f;
+}
+
+.men-page .wellness-card h3 {
+    color: #385451;
+}
+
+.men-page .wellness-card p {
+    color: #788785;
+}
+
+.men-page .todo-item {
+    background: #edf4f3;
+    color: #45615e;
+}
+
+.men-page .todo-item input {
+    accent-color: #35625f;
+}
+
+.men-page .motivation {
+    background: linear-gradient(135deg, #dceae8, #e8f0ef);
+}
+
+.men-page .motivation h2 {
+    color: #35625f;
+}
+
+.men-page .motivation p {
+    color: #637b78;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.choice-card,
+.stat-card,
+.wellness-card,
+.todo-section,
+.motivation {
+    animation: fadeUp 0.7s ease both;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .welcome {
+        padding: 35px 5%;
+    }
+
+    .brand h1 {
+        font-size: 42px;
+    }
+
+    .selection h2 {
+        font-size: 34px;
+    }
+
+    .choice-container {
+        gap: 18px;
+    }
+
+    .choice-card {
+        width: 50%;
+        padding: 30px 20px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .wellness-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .todo-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .welcome {
+        padding: 30px 20px;
+    }
+
+    .brand h1 {
+        font-size: 36px;
+        letter-spacing: 5px;
+    }
+
+    .selection {
+        margin: 50px 0;
+    }
+
+    .selection h2 {
+        font-size: 30px;
+    }
+
+    .choice-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .choice-card {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .dashboard {
+        width: 90%;
+    }
+
+    .top-bar {
+        padding-bottom: 20px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .welcome-text {
+        padding: 25px 0;
+    }
+
+    .welcome-text h1 {
+        font-size: 40px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-bottom: 40px;
+    }
+
+    .stat-card {
+        padding: 17px;
+    }
+
+    .stat-card h3 {
+        font-size: 22px;
+    }
+
+    .section-title {
+        font-size: 27px;
+    }
+
+    .wellness-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .wellness-card {
+        min-height: auto;
+        padding: 22px;
+    }
+
+    .todo-list {
+        grid-template-columns: 1fr;
+    }
+
+    .todo-section {
+        padding: 22px;
+    }
+
+    .motivation {
+        padding: 30px 22px;
+    }
+}
+/* =========================
+   SOLUTION PAGE
+========================= */
+
+.solution-page {
+    width: min(1100px, 92%);
+    margin: auto;
+    padding: 25px 0 60px;
+}
+
+.solution-content {
+    padding-top: 45px;
+}
+
+.solution-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 45px;
+}
+
+.solution-label {
+    display: inline-block;
+    color: #a2606d;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.solution-heading h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 7vw, 70px);
+    color: #543d44;
+    margin-bottom: 15px;
+}
+
+.solution-heading p {
+    color: #85757a;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+
+/* SOLUTION CARDS */
+
+.solution-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.solution-card {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid #eadcdf;
+    border-radius: 25px;
+    padding: 30px;
+    min-height: 300px;
+    box-shadow: 0 12px 35px rgba(90, 60, 70, 0.07);
+    transition: 0.4s ease;
+}
+
+.solution-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(90, 60, 70, 0.13);
+    border-color: #d7b7c0;
+}
+
+.solution-icon {
+    width: 55px;
+    height: 55px;
+    display: grid;
+    place-items: center;
+    border-radius: 17px;
+    background: #f0dce1;
+    font-size: 25px;
+    margin-bottom: 22px;
+}
+
+.solution-card h2 {
+    font-family: 'Playfair Display', serif;
+    color: #60434c;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.solution-card p {
+    color: #817278;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.solution-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.solution-card li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 14px;
+    color: #817278;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.solution-card li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #a2606d;
+    font-weight: 700;
+}
+
+
+/* REMINDER */
+
+.solution-reminder {
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 25px;
+    background: linear-gradient(
+        135deg,
+        #ead5d9,
+        #f3e5e6
+    );
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.solution-reminder > span {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.65);
+    color: #a2606d;
+    font-size: 22px;
+}
+
+.solution-reminder h2 {
+    font-family: 'Playfair Display', serif;
+    color: #714c57;
+    margin-bottom: 6px;
+}
+
+.solution-reminder p {
+    color: #846d74;
+    line-height: 1.6;
+}
+ 
+
+/* ==============================
+   MOOD TRACKER
+============================== */
+
+.mood-tracker {
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid #eadcdf;
+}
+
+.mood-tracker h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 25px;
+}
+
+.mood-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.mood-options button {
+    border: none;
+    background: #f3e3e6;
+    border-radius: 18px;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 28px;
+    transition: 0.3s ease;
+}
+
+.mood-options button span {
+    display: block;
+    font-size: 13px;
+    margin-top: 6px;
+    color: #704f59;
+}
+
+.mood-options button:hover {
+    transform: translateY(-5px);
+    background: #ead1d7;
+}
+
+#selectedMood {
+    margin-top: 25px;
+    color: #806b72;
+    font-size: 15px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .solution-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .solution-card {
+        min-height: auto;
+    }
+
+    .solution-heading {
+        margin-bottom: 30px;
+    }
+
+    .solution-content {
+        padding-top: 25px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .solution-page {
+        width: 90%;
+    }
+
+    .solution-heading h1 {
+        font-size: 42px;
+    }
+
+    .solution-heading p {
+        font-size: 14px;
+    }
+
+    .solution-card {
+        padding: 24px;
+    }
+
+    .solution-reminder {
+        padding: 24px;
+        align-items: flex-start;
+    }
+}
+/* =========================
+   AROHA MEN - COMPLETE THEME
+========================= */
+
+body.men-page {
+    background: #f2f6f5 !important;
+    color: #294744 !important;
+}
+
+/* Main dashboard */
+
+.men-page .dashboard {
+    background: transparent;
+}
+
+
+/* Top bar */
+
+.men-page .top-bar {
+    background: transparent;
+}
+
+.men-page .logo {
+    color: #285b58 !important;
+}
+
+.men-page .back-btn {
+    background: #ffffff !important;
+    color: #285b58 !important;
+    border: 1px solid #d5e4e1;
+}
+
+.men-page .back-btn:hover {
+    background: #285b58 !important;
+    color: #ffffff !important;
+}
+
+
+/* Welcome */
+
+.men-page .welcome-text small {
+    color: #3f7772 !important;
+}
+
+.men-page .welcome-text h1 {
+    color: #294744 !important;
+}
+
+.men-page .welcome-text p {
+    color: #71827f !important;
+}
+
+
+/* Stats */
+
+.men-page .stat-card {
+    background: #ffffff !important;
+    border: 1px solid #d9e6e3 !important;
+    box-shadow: 0 10px 30px rgba(35, 80, 75, 0.06);
+}
+
+.men-page .stat-card span {
+    color: #71827f !important;
+}
+
+.men-page .stat-card h3 {
+    color: #285b58 !important;
+}
+
+
+/* Section title */
+
+.men-page .section-title {
+    color: #294744 !important;
+}
+
+
+/* Wellness cards */
+
+.men-page .wellness-card {
+    background: #ffffff !important;
+    border: 1px solid #d9e6e3 !important;
+    box-shadow: 0 10px 30px rgba(35, 80, 75, 0.05);
+}
+
+.men-page .wellness-card::after {
+    background: #d9ebe8 !important;
+}
+
+.men-page .wellness-card:hover {
+    border-color: #8fb8b3 !important;
+    box-shadow: 0 20px 45px rgba(35, 80, 75, 0.14);
+}
+
+.men-page .card-icon {
+    background: #dcebe9 !important;
+    color: #285b58 !important;
+}
+
+.men-page .wellness-card h3 {
+    color: #315653 !important;
+}
+
+.men-page .wellness-card p {
+    color: #748581 !important;
+}
+
+
+/* Today's care */
+
+.men-page .todo-section {
+    background: #ffffff !important;
+    border: 1px solid #d9e6e3 !important;
+}
+
+.men-page .todo-item {
+    background: #edf5f3 !important;
+    color: #45625f !important;
+}
+
+.men-page .todo-item input {
+    accent-color: #285b58 !important;
+}
+
+
+/* Motivation */
+
+.men-page .motivation {
+    background: linear-gradient(
+        135deg,
+        #d5e7e4,
+        #e7f0ef
+    ) !important;
+}
+
+.men-page .motivation h2 {
+    color: #285b58 !important;
+}
+
+.men-page .motivation p {
+    color: #637a77 !important;
+}
